@@ -2466,7 +2466,7 @@ if MCP_AVAILABLE:
             # Child app receives path like /undefined when mounted at /mcp
             # Extract first path segment as server name
             segments = path.strip("/").split("/")
-            if segments and segments[0] and "?" not in segments[0]:
+            if segments and segments[0] and "?" not in segments[0] and "#" not in segments[0]:
                 mcp_servers_from_path = [segments[0]]
         return mcp_servers_from_path
 
